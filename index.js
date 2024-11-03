@@ -22,9 +22,9 @@ app.use(express.static("public"));
 
 const server = http.createServer(app);
 app.use("/api/auth", authRoutes);
-app.use("/api/driver", driverRoutes);
-// app.use("/api/booking", bookingRoutes(io));
-// app.use("/api/passenger", passengerRoutes(io));
+// app.use("/api/driver", driverRoutes);
+// app.use("/api/booking", bookingRoutes);
+app.use("/api/passenger", passengerRoutes);
 
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

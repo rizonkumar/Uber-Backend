@@ -1,18 +1,10 @@
 const bookingRepository = require("../repositories/bookingRepository");
-const passengerRepository = require("../repositories/passengerRepository");
 
 const getPassengerBookings = async (passengerId) => {
-  try {
-    const passengerDetails = await passengerRepository.findPassengerById(
-      passengerId
-    );
-    console.log("Passenger Details from Service Layer", passengerDetails);
-    if (!passengerDetails) throw new Error("Passenger not found");
-    return passengerDetails;
-  } catch (error) {
-    console.log(error);
-    throw new Error("Error in getting passenger bookings");
-  }
+  const bookings = await bookingRepository.findBookingsByPassengerId(
+    passengerId
+  );
+  return bookings;
 };
 
 const provideFeedback = async (passengerId, bookingId, rating, feedback) => {
