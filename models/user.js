@@ -29,7 +29,7 @@ userSchema.pre("save", async function (next) {
 });
 
 // this is a method that compares the  password with the hashed password in the database
-userSchema.method.comparePassword = async function (password) {
+userSchema.methods.comparePassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
