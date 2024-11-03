@@ -5,8 +5,9 @@ const authRoutes = require("./routes/authRoutes.js");
 const bookingRoutes = require("./routes/bookingRoutes.js");
 const driverRoutes = require("./routes/driverRoute.js");
 const passengerRoutes = require("./routes/passengerRoute.js");
-const { connectDB } = require("./utils/db.js");
-const { redisClient } = require("./utils/redis.js");
+const cors = require("cors");
+const connectDB = require("./utils/db.js");
+const { redisClient } = require("./utils/redisClient.js");
 
 dotenv.config();
 
