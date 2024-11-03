@@ -1,9 +1,10 @@
 const exprss = require("express");
+const { register, login } = require("../controllers/authController");
 
 const router = exprss.Router();
 
-router.post("/register", registerController);
+router.post("/register", register);
 
-router.post("/login", loginController);
+router.post("/login", login);
 
 module.exports = router;
