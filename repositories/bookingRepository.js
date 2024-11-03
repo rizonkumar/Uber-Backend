@@ -5,4 +5,8 @@ const findBooking = async (criteria) => {
   return await Booking.findOne(criteria);
 };
 
-module.exports = { findBooking };
+const findBookingsByPassengerId = async (passengerId) => {
+  return await Booking.find({ passenger: passengerId });
+};
+
+module.exports = { findBooking, findBookingsByPassengerId };

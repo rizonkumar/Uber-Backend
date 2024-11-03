@@ -4,12 +4,12 @@ const bookingSchema = new mongoose.Schema({
   passenger: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   driver: { type: mongoose.Schema.Types.ObjectId, ref: "User", default: null },
   source: {
-    latitude: { type: Number, required: true },
-    longitude: { type: Number, required: true },
+    latitude: { type: Number },
+    longitude: { type: Number },
   },
   destination: {
-    latitude: { type: Number, required: true },
-    longitude: { type: Number, required: true },
+    latitude: { type: Number },
+    longitude: { type: Number },
   },
   fare: Number,
   status: {

@@ -3,7 +3,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 
-router.get("/bookings", authMiddleware, getDriverBookings);
-router.get("/locations", authMiddleware, updateLocation);
+// router.get("/bookings", authMiddleware, getDriverBookings);
+// router.get("/locations", authMiddleware, updateLocation);
 
 module.exports = router;
